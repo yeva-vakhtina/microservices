@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 100%;
+  font-family: "Jost", sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  position: relative
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 2rem;
+  background-color: transparent;
+  box-shadow: 0 4px 6px -6px black;
+  height: 4rem;
+  width: 100vw;
+}
+
+.navbar__list-item {
+  list-style-type: none;
+  display: block;
+  float: right;
+}
+
+.navbar__list-item-link {
+  color: white;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  margin-top: 0.9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: block;
+}
+
+.navbar__list-item-link:hover {
+  color: #8e9aaf;
+}
+
+.navbar__brand {
+  list-style-type: none;
+  display: block;
+  float: left;
+  background-image: url("../img/temporary.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+}
+
+.landing__header {
+  color: black;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-size: 2rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/concert.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0.3rem);
+  pointer-events: none;
+}
+
+.signin,
+.signup {
+  position: absolute;
+  top: calc(50vh - 16rem);
+  left: calc(50vw - 12rem);
+  backdrop-filter: blur(3.5rem);
+  width: 24rem;
+  height: 32rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.75);
+  z-index: 5;
+}
+
+.signup {
+  top: calc(50vh - 18rem);
+  height: 36rem;
+}
+
+.signin__header,
+.signup__header {
+  font-size: 2.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 5rem auto;
+  color: white;
+}
+
+.signup__header {
+  margin: 3.75rem auto 3rem auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  background: transparent;
+  width: 70%;
+  color: #262626;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.8rem;
+  margin: 0.75rem auto;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: white;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  font-weight: 100;
+  transition: 0.5s font-size ease;
+}
+
+input:focus {
+  color: white;
+  outline: none;
+  font-size: 1.1em;
+}
+
+.button__signup,
+.button__signin {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  outline: none;
+  border: solid 1px white;
+  border-radius: 10000px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 4rem;
+  display: block;
+  color: white;
+  background-color: transparent;
+  backdrop-filter: blur(3rem);
+}
+
+.button__signup {
+  margin-top: 4rem;
+}
+
+.button__signup:hover,
+.button__signin:hover {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgb(92, 92, 92) 1%,
+    rgb(35, 35, 35) 1%
+  );
+  background-size: 20000% 20000%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: background-size linear 0.25s;
+  cursor: pointer;
+}
+
+.button__signup:hover:active,
+.button__signin:hover:active {
+  transition-duration: 0s;
+  background-size: 100% 100%;
+}
+
+.signup__link,
+.signin__link {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+.signin__link {
+  margin-top: 1.5rem;
+}
+
+.description {
+  margin-right: 0.5rem;
+  font-size: 0.6em;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75em;
+  font-weight: bold;
+  outline: none;
+  font-size: 0.6em;
+}
+
+.link:hover {
+  cursor: pointer;
+}
